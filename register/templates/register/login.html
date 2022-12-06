@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+{% load static %}
+{%block title%}
+Login Page
+{%endblock%}
+
+{%block content%}
+<div class="login-container">
+    <div class="login-image">
+        <img src="{% static 'media/team.svg' %}">
+        <h1>Welcome Back</h1>
+    </div>
+    <div class="login-form">
+        <form method="POST">
+            <div class="login-form-header">
+                <div class="login-form-header-title">
+                    <h1>Log In</h1>
+                </div>
+            </div>
+            <div class="login-input-group">
+                {% for item in form %}
+                    <div class="login-input-box">
+                        <label>{{item.label}}</label>
+                        {{item}}
+                    </div>
+                {%endfor%}
+            </div>
+            <div class="login-form-buttons">
+                <div class="login-submit-button">
+                    <button type="submit">Log In</button>
+                </div>
+                <div class="login-signup-button">
+                    <p>Don't have an account?</p><button><a href="/register">Sign Up</a></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}

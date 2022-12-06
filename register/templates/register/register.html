@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Create an Account{%endblock%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="register-container">
+
+    <div class="register-image">
+        <img src="{% static 'media/programming.svg'%}">
+    </div>
+
+    <div class="register-form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="register-form-header">
+                <div class="register-content-title">
+                    <h1>Sign Up</h1>
+                </div>
+                <div class="register-login-button">
+                    <button><a href="/login">Login</a></button>
+                </div>
+            </div>
+
+            <div class="register-input-group">
+                    {% for item in form %}
+                        <div class="register-input-box">
+                            <label>{{item.label}}</label>
+                            {{item}}
+                        </div>
+                    {% endfor %}
+            </div>
+            <div class="register-form-button">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

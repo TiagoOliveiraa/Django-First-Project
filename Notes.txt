@@ -1,0 +1,86 @@
+#=======================================================================================================================================================#
+
+Django Project Start
+
+#=======================================================================================================================================================#
+
+1 - To start a django project, inside of the folder that we will store the files, use the command:
+
+    django-admin startproject <name_of_the_project>
+
+2 - To test if the project was sucessfuly created use the command:
+
+    python manage.py runserver
+
+This will start a server instance in localhost machine (localhost:8000)
+
+3 - Create an App using the manage file:
+
+    python manage.py startapp <name_of_the_application>
+
+
+#=======================================================================================================================================================#
+
+Aplication Stuff
+
+#=======================================================================================================================================================#
+
+##views.py##
+
+-> Store the different views for our application.
+-> A view can be seen as an "webpage"
+-> File where we gonna write the code shown by the http request
+
+##urls.py##
+
+-> Created to store the different urls for the views
+
+
+
+
+
+#=======================================================================================================================================================#
+
+Working on the application
+
+#=======================================================================================================================================================#
+
+Views.py:
+
+Import the HttpResponse Module:
+
+    from django.http import HttpResponse
+
+---------------------------------------
+
+urls.py
+
+
+Import path module of django.urls
+
+    from django.urls import path
+
+Import Views from directory
+
+    from . import views
+
+---------------------------------------
+
+
+
+#=======================================================================================================================================================#
+
+Database Stuff
+
+#=======================================================================================================================================================#
+
+In settings.py
+
+If we want to use database:
+    We need to add in settings.py/INSTALLED_APPS:
+        '<Application_name>.apps.<Application_name>Config'
+
+
+in cmd:
+
+    python manage.py migrate
